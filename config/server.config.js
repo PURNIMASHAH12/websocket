@@ -9,7 +9,7 @@ export const initSocket = async (server) => {
     io.on('connection', (socket) => {
         console.log("connection successful", socket.id)
 
-        socket.on('disconnected', () => {
+        socket.on('disconnect', () => {
             console.log("user disconnected", socket.id)
         })
     })

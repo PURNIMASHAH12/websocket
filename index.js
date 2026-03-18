@@ -5,6 +5,8 @@ import connectDB from "./config/db.js";
 import userRoutes from "./src/modules/users/users.routes.js";
 import { initSocket } from "./config/server.config.js";
 import http from "http";
+//import { notification } from "./src/modules/notification/notification.controller.js";
+import notificationRoute from "./src/modules/notification/notification.routes.js";
 
 
 dotenv.config();
@@ -21,6 +23,7 @@ const server = http.createServer(app)
 initSocket(server)
 
 app.use("/user", userRoutes);
+app.use('/notification',notificationRoute);
 
 
 app.get("/", (req, res) => {
@@ -44,6 +47,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is Running on http://localhost:${PORT}`);
 });

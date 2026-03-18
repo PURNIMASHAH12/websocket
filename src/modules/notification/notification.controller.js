@@ -1,11 +1,11 @@
 import notificationModel from "./notification.models.js";
-import { goIo } from "../../../config/server.config";
+import { goIo } from "../../../config/server.config.js";
 
-export const notification = async () => {
+export const notification = async (req,res) => {
   try {
-    const { message, userId } = requestAnimationFrame.body
+    const { message, userId } = req.body
 
-    if (!message || !userId) resizeBy.status(400).json({
+    if (!message || !userId) res.status(400).json({
       message: "all fields are required"
     })
 
@@ -15,7 +15,7 @@ export const notification = async () => {
       read: false
     })
 
-    goIo().emit('New Notification', newNotification);
+    goIo().emit('newNotification', newNotification);
 
     res.status(201).json({
       message: "Notification !!!",

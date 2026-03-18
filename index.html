@@ -22,7 +22,7 @@
       console.log("Connected to Server...", socket.id);
     });
 
-    socket.on("notification", (data) => {
+    socket.on("newNotification", (data) => {
       document.getElementById("Notification").innerHTML = data.message;
     });
   </script>

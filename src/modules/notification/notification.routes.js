@@ -1,4 +1,4 @@
-import user, { notification, getNotification } from "../notification/notification.controller.js";
+import  { notification, getNotification } from "../notification/notification.controller.js";
 import express from "express";
 
 const router = express.Router();
